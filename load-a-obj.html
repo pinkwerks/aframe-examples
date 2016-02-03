@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+    <head>
+	<meta charset="utf-8">
+	<title>Clock! • H-Frame</title>
+	<meta name="description" content="Hello, World! • H-Frame">
+	<script src="aframe.min.js"></script>
+	<!-- dev branch v0.2.0 assumed! -->
+	<!-- <script src="https://aframe.io/releases/latest/aframe.min.js"></script> -->
+	<script src="aframe-text-component.min.js"></script>
+	<script src="js/clock.js"></script>
+    </head>
+    <body>
+	<a-scene fog="type: linear; color: #333; far: 10; near: 2">
+	    <a-sky color="#777"></a-sky>
+	    <a-entity position="0 .1 2"
+		      rotation="0 0 0"
+		      camera="fov: 80; near: 0.1; far: 10000"
+		      look-controls="enabled: true" wasd-controls="enabled: true">
+		<a-entity raycaster=""
+			  visible="true"
+			  position="0 0 -2"
+			  geometry="primitive: ring; radiusOuter: 0.016; radiusInner: 0.01"
+			  material="color: #4CC3D9; shader: flat; transparent: true; opacity: 0.5"
+			  scale="2 2 2"
+			  cursor="maxDistance: 100;">
+		</a-entity>
+	    </a-entity>
+
+	    <a-entity geometry="primitive: plane" rotation="-90 0 0" material="color: green;"></a-entity>
+	    <a-entity obj-model="obj: url(sphere.obj); mtl: url(sphere.mtl)"></a-entity>
+	</a-scene>
+    </body>
+</html>
